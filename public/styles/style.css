@@ -1,0 +1,222 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --themeColoreGreen : #3ECBB1;
+    --themeColorBlack : #090909;
+    --themeColorPurple: #5C28C4;
+}
+.neonGreenClr{
+    color: var(--themeColoreGreen);
+}
+
+body{
+    background-color: #242424;
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 150px;
+    box-sizing: border-box;
+}
+
+#backGround-Neon1{
+    background-color: var(--themeColoreGreen);
+    filter : blur(130px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+#backGround-Neon2{
+    background-color: var(--themeColorPurple);
+    filter : blur(130px);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    z-index: -1;
+}
+#header , form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#header {
+    height: 800px;
+    width: 600px;
+    background: rgba(25, 24, 24, 0.62);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16.2px);
+    -webkit-backdrop-filter: blur(16.2px);
+    border: 1px solid var(--themeColoreGreen);
+    box-sizing: border-box;
+    padding: 50px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+#header h1 {
+    color: #fff;
+    margin-bottom: 24px;
+}
+#header form label{
+    margin-bottom: 18px;
+    color: var(--themeColoreGreen);
+    text-align: left;
+}
+#header form textarea{
+width: 400px;
+height: 300px;
+background-color: var(--themeColoreGreen);
+padding: 20px;
+box-sizing: border-box;
+margin-bottom: 20px;
+overflow: hidden;
+}
+#header form textarea::placeholder{
+    color: #242424;
+    text-align: center;
+    font-size: 28px;
+}
+#header form textarea:focus{
+    outline: 1px solid var(--themeColoreGreen);
+}
+#header form button {
+    width: 70%;
+    height: 50px;
+    background-color: var(--themeColoreGreen);
+    color: #242424;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s linear;
+    &:hover{
+        background-color: var(--themeColorPurple);
+        color: #fff;
+    }
+}
+
+#fHeading {
+    height: 50px;
+    width: 100%;
+    border: none;
+    background-color: var(--themeColoreGreen);
+padding: 20px;
+box-sizing: border-box;
+margin-bottom: 10px;
+overflow: hidden;
+}
+
+#fHeading{
+    outline: 1px solid var(--themeColoreGreen);
+}
+
+
+#fHeading::placeholder{
+    color: #242424;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+#credits{
+    margin-top: 20px;
+    color: var(--themeColoreGreen);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#rightSection{
+    height: 800px;
+    width: 950px;
+    background: rgba(25, 24, 24, 0.62);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16.2px);
+    -webkit-backdrop-filter: blur(16.2px);
+    border: 1px solid var(--themeColoreGreen);
+    padding: 80px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+#rightSection::-webkit-scrollbar{
+    background-color: var(--themeColoreGreen);
+}
+#rightSection::-webkit-scrollbar-track{
+    background-color: var(--themeColoreGreen);
+}
+#rightSection::-webkit-scrollbar-thumb{
+    background-color: var(--themeColorPurple);
+}
+
+#blogCard {
+    background-color: var(--themeColoreGreen);
+    box-sizing: border-box;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+#blogCard h1 {
+color: var(--themeColorBlack);
+}
+#blogCard div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#blogCard p{
+    margin-top: 10px;
+}
+#dateRight{
+    text-align: right;
+}
+
+#blogCard button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: 0.4s linear;
+}
+#btns-DetPurple{
+    color: #5C28C4;
+    cursor: pointer;
+    &:hover{
+        color: #9269e5;
+    }
+}
+#btns-DetRed{
+    color: rgb(168, 87, 87);
+    cursor: pointer;
+    &:hover{
+        color: rgb(234, 157, 157);
+    }
+}
+#dateRight {
+    font-size: 10px;
+}

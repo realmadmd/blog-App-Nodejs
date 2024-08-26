@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Blog Node  App</title>
+</head>
+<body>
+    <div id="backGround-Neon1"></div>
+    <div id="backGround-Neon2"></div>
+    <div id="header">
+        <h1>my<span class="neonGreenClr">B</span>logger</h1>
+        <form action="/submit" method="post">
+            <label for="fHeading">Blog Heading</label>
+            <input type="text" name="fHeading" id="fHeading"placeholder="Type Heading">
+            <label for="writeBlog">Please Write Your Blog Below</label>
+            <textarea name="writeBlog" id="writeBlog" placeholder="Write Here"></textarea>
+            <button type="submit">Create Blog</button>
+        </form>
+        <p id="credits">Auther - Daud Ahmed</p>
+    </div>
+    <div id="rightSection">
+    <% if(locals.blogPosts){  %>
+        <% blogPosts.forEach((elem) => {  %>
+     <div id="blogCard">
+      <div>
+        <h3><%= elem.blogHeading %></h3>
+      <div>
+        <button id="btns-DetPurple"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button id="btns-DetRed"><i class="fa-solid fa-trash"></i></button>
+      </div>
+      </div>
+      <p><%= elem.blogPost %></p>
+      <p id="dateRight"><%= elem.postDate %></p>
+     </div>
+    <% }) %>
+     <% }else {  %>
+        <p id="credits">No Posts Available to Show</p>
+        <% } %>
+    </div>
