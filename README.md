@@ -83,7 +83,3 @@ To contribute to the 5.0 Capstone Blog App, follow these steps:
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-Feel free to adjust the README to better suit your project details or add any additional sections as necessary.
