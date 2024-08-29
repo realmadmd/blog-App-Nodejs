@@ -9,25 +9,25 @@
 
 
 
-// let blogPosts = [];
+// let taskPosts = [];
 
 // // HTTP GETs
 // app.get('/', (req, res) => {
-//     res.render('index.ejs', { blogPosts: blogPosts }); 
+//     res.render('index.ejs', { taskPosts: taskPosts }); 
 // });
 
 // // HTTP Posts
 // app.post('/submit', (req, res) => {
-//     let blogHeading = req.body["fHeading"];
-//     let blogPost = req.body["writeBlog"];
-//     let blogData = {
-//         blogHeading: blogHeading,
-//         blogPost: blogPost
+//     let taskHeading = req.body["fHeading"];
+//     let taskPost = req.body["writetask"];
+//     let taskData = {
+//         taskHeading: taskHeading,
+//         taskPost: taskPost
 //     };
     
-//     blogPosts.push(blogData); 
+//     taskPosts.push(taskData); 
 
-//     res.render('index.ejs', { blogPosts: blogPosts }); 
+//     res.render('index.ejs', { taskPosts: taskPosts }); 
 // });
 
 // // HTTP Puts
@@ -47,64 +47,67 @@
 
 
 
-
 import express from 'express';
 import bodyParser from 'body-parser';
 
 const app = express();
 const port = 3000;
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json()); // To handle JSON body in requests
+app.use(bodyParser.json());
 
-let blogPosts = [];
+let taskPosts = [];
 
-// HTTP GETs
+// HTTP GET
 app.get('/', (req, res) => {
-    res.render('index.ejs', { blogPosts: blogPosts });
+    res.render('index.ejs', { taskPosts: taskPosts });
 });
 
-// HTTP POSTs
+// HTTP POST to create a new post
 app.post('/submit', (req, res) => {
-    let blogHeading = req.body["fHeading"];
-    let blogPost = req.body["writeBlog"];
-    let blogData = {
-        id: blogPosts.length + 1, 
-        blogHeading: blogHeading,
-        blogPost: blogPost,
+    const taskHeading = req.body.fHeading;
+    const taskPost = req.body.writetask;
+    const taskData = {
+        id: taskPosts.length,
+        taskHeading: taskHeading,
+        taskPost: taskPost,
         postDate: new Date()
     };
-    blogPosts.push(blogData);
-    res.render('index.ejs', { blogPosts: blogPosts });
-});
-
-// HTTP PUT for editing a post
-app.put('/edit', (req, res) => {
-    const { id, updatedContent } = req.body;
-    const postIndex = blogPosts.findIndex(post => post.id === parseInt(id));
+    taskPosts.push(taskData);
     
-    if (postIndex !== -1) {
-        blogPosts[postIndex].blogPost = updatedContent;
-        res.json({ success: true });
+    res.redirect('/');
+});
+
+// HTTP PUT to edit a post
+app.put('/edit/:postid', (req, res) => {
+    const postId = parseInt(req.params.postid, 10);
+    console.log(parseInt(req.params.postid))
+    const updatedHeading = req.body.newHeading;
+    const updatedPostContent = req.body.newPostContent;
+
+    if (postId >= 0 && postId < taskPosts.length) {
+        taskPosts[postId].taskHeading = updatedHeading;
+        taskPosts[postId].taskPost = updatedPostContent;
+        res.json({ message: 'Post updated successfully', updatedPost: taskPosts[postId] });
     } else {
-        res.status(404).json({ success: false });
+        res.status(404).json({ message: 'Post not found' });
     }
 });
 
-// HTTP DELETE for deleting a post
-app.delete('/delete', (req, res) => {
-    const { id } = req.body;
-    const postIndex = blogPosts.findIndex(post => post.id === parseInt(id));
+// HTTP DELETE to delete a post
+app.delete('/delete/:postid', (req, res) => {
+    const postId = parseInt(req.params.postid, 10);
 
-    if (postIndex !== -1) {
-        blogPosts.splice(postIndex, 1);
-        res.json({ success: true });
+    if (postId >= 0 && postId < taskPosts.length) {
+        taskPosts.splice(postId, 1);
+        res.json({ message: 'Post deleted successfully' });
     } else {
-        res.status(404).json({ success: false });
+        res.status(404).json({ message: 'Post not found' });
     }
 });
 
-// Listening Server Here
+// Start server
 app.listen(port, () => {
-    console.log(`Server is successfully running on ${port}`);
+    console.log(`Server is successfully running on port ${port}`);
 });

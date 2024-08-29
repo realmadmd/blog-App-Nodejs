@@ -175,42 +175,42 @@ overflow: hidden;
     background-color: var(--themeColorPurple);
 }
 
-#blogCard {
+#taskCard {
     background-color: var(--themeColoreGreen);
     box-sizing: border-box;
     padding: 25px;
     margin-bottom: 25px;
 }
-#blogCard h1 {
+#taskCard h1 {
 color: var(--themeColorBlack);
 }
-#blogCard div {
+#taskCard div {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-#blogCard p{
+#taskCard p{
     margin-top: 10px;
 }
 #dateRight{
     text-align: right;
 }
 
-#blogCard button {
+#taskCard button {
     background-color: transparent;
     border: none;
     font-size: 20px;
     margin-right: 15px;
     transition: 0.4s linear;
 }
-#btns-DetPurple{
+.btns-DetPurple{
     color: #5C28C4;
     cursor: pointer;
     &:hover{
         color: #9269e5;
     }
 }
-#btns-DetRed{
+.btns-DetRed{
     color: rgb(168, 87, 87);
     cursor: pointer;
     &:hover{
