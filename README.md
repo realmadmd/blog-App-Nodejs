@@ -1,6 +1,6 @@
-# EON Blog App
+# EON ToDo App
 
-The "EON Capstone Blog App" is a Node.js application designed to provide a simple and efficient platform for blogging. This app uses Express.js for handling routing and middleware, EJS for templating, and integrates other useful packages to enhance its functionality.
+The "EON Capstone ToDo App" is a Node.js application designed to provide a simple and efficient platform for managing tasks. This app uses Express.js for handling routing and middleware, EJS for templating, and integrates other useful packages to enhance its functionality.
 
 ## Features
 
@@ -21,8 +21,8 @@ Before you begin, ensure you have met the following requirements:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/realmadmd/blog-App-Nodejs
-   cd EON-Blog-App
+   git clone https://github.com/realmadmd/todo-App-Nodejs
+   cd EON-ToDo-App
    ```
 
 2. **Install dependencies**:
@@ -52,7 +52,7 @@ npm run dev
 ## Project Structure
 
 ```
-EON-Blog-App/
+EON-ToDo-App/
 │
 ├── index.js          # Entry point for the application
 ├── app.js            # Core application setup
@@ -72,7 +72,7 @@ EON-Blog-App/
 
 ## Contributing
 
-To contribute to the 5.0 Capstone Blog App, follow these steps:
+To contribute to the EON ToDo App, follow these steps:
 
 1. Fork this repository.
 2. Create a branch: `git checkout -b <branch_name>`.
@@ -83,3 +83,11 @@ To contribute to the 5.0 Capstone Blog App, follow these steps:
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+### Changes Made:
+
+- **Replaced references to "Blog" with "ToDo"**: The app is now described as a ToDo app, which is reflected in the title, description, and throughout the document.
+- **Updated Repository Links**: The git clone URL has been updated to `todo-App-Nodejs` as an example.
+- **Updated Project Structure Description**: The description now refers to tasks and managing a to-do list.
